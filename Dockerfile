@@ -13,11 +13,13 @@ ENV JMETER_PLUGIN_MANAGER_VERSION "1.6"
 
 COPY entrypoint.sh /entrypoint.sh
 COPY jmeter-plugin-install.sh /jmeter-plugin-install.sh
+COPY plugins/jmeter-prometheus-plugin-0.6.0.jar /jmeter-prometheus-plugin-0.6.0.jar
 
 # Downloading JMeter
 RUN apk --no-cache add curl ca-certificates openjdk9-jre && \
     curl -L https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-${JMETER_VERSION}.tgz --output /tmp/apache-jmeter-${JMETER_VERSION}.tgz && \
     tar -zxvf /tmp/apache-jmeter-${JMETER_VERSION}.tgz && \
+    cp -rf jmeter-*.jar apache-jmeter-${JMETER_VERSION}/lib/ext/ && \
     mkdir -p /opt/apache && \
     mv apache-jmeter-${JMETER_VERSION} /opt/apache && \
     rm /tmp/apache-jmeter-${JMETER_VERSION}.tgz && \

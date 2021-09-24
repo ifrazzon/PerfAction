@@ -17,7 +17,7 @@ inputs:
 
 runs:
   using: 'docker'
-  image: 'docker://ifrazzon:jmeter'
+  image: 'docker://ifrazzon/jmeter:0.1.0'
   args:
   - "-n"
   - "-t"

@@ -2,7 +2,6 @@ on: [push]
 jobs:
   jmeter_job:
     runs-on: ubuntu-latest
-    container: ifrazzon/jmeter:0.1.0
     name: JMeter Test Execution
     steps:      
       - name: Checkout

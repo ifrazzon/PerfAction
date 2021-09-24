@@ -18,7 +18,7 @@ inputs:
 runs:
   using: 'docker'
   image: 'docker://ifrazzon/jmeter:0.2.0'
-  entrypoint: 'entrypoint.sh'
+  entrypoint: '/entrypoint.sh'
   args:
   - "-n"
   - "-t"

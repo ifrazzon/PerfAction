@@ -17,5 +17,3 @@ java -cp /opt/apache/apache-jmeter-${JMETER_VERSION}/lib/ext/jmeter-plugins-mana
 chmod a+x ${JMETER_HOME}/bin/*.sh
 
 ${JMETER_HOME}/bin/PluginsManagerCMD.sh install jpgc-udp=0.4
-
-

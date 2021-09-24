@@ -8,7 +8,7 @@ jobs:
         uses: actions/checkout@v2
         
       - name: Run JMeter Tests
-        uses: docker/ifrazzon/jmeter@0.1.0
+        uses: ./
         with:
           test-plan-path: ./TestPlans/S01_SimpleExample/S01_SimpleExample.jmx
           args: ""

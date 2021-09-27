@@ -1,8 +1,8 @@
 on: [push]
 jobs:
-  jmeter_job:
+  simple01:
     runs-on: ubuntu-latest
-    name: JMeter Test Execution
+    name: simple01
     steps:      
       - name: Checkout
         uses: actions/checkout@v2
@@ -12,7 +12,19 @@ jobs:
         with:
           test-plan-path: ./TestPlans/S01_SimpleExample/S01_SimpleExample.jmx
           args: ""
-          
+  simple02:
+    runs-on: ubuntu-latest
+    name: simple02
+    steps:      
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: Run JMeter Tests
+        uses: ./
+        with:
+          test-plan-path: ./TestPlans/S01_SimpleExample/S02_SimpleExample.jmx
+          args: ""
+
       - name: Upload Results
         uses: actions/upload-artifact@v2
         with:

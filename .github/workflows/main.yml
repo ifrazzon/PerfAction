@@ -7,10 +7,3 @@ jobs:
     steps:      
       - name: Checkout
       - uses: actions/checkout@v2
-      - run: jmeter -n -t ./TestPlans/S01_SimpleExample/S01_SimpleExample.jmx -l result.jtl -e -o result
-          
-      - name: Upload Results
-        uses: actions/upload-artifact@v2
-        with:
-          name: jmeter-results
-          path: result

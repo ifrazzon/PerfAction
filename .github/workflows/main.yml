@@ -9,10 +9,10 @@ jobs:
         uses: actions/checkout@v2
         
       - name: Run JMeter Tests
-      - run: jmeter -n -t $BASEDIR/Scripts/Sandbox/Cadastro/Cadastro.jmx -l $BASEDIR/Scripts/Sandbox/Cadastro/jtlFiles/Cadastro_$FILENAME.jtl -e -o $BASEDIR/Reports/Sandbox/Cadastro/Cadastro_$FILENAME
+      - run: jmeter -n -t /TestPlans/S01_SimpleExample/S01_SimpleExample.jmx -l result.jtl -e -o result
           
       - name: Upload Results
         uses: actions/upload-artifact@v2
         with:
           name: jmeter-results
-          path: result.jtl
+          path: result

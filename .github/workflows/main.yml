@@ -9,7 +9,7 @@ jobs:
         uses: actions/checkout@v2
         
       - name: Run JMeter Tests
-        uses: ./TestPlans/S01_SimpleExample/S01_SimpleExample.jmx
+      - run: jmeter -n -t $BASEDIR/Scripts/Sandbox/Cadastro/Cadastro.jmx -l $BASEDIR/Scripts/Sandbox/Cadastro/jtlFiles/Cadastro_$FILENAME.jtl -e -o $BASEDIR/Reports/Sandbox/Cadastro/Cadastro_$FILENAME
           
       - name: Upload Results
         uses: actions/upload-artifact@v2

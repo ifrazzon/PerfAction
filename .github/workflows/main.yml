@@ -8,10 +8,7 @@ jobs:
         uses: actions/checkout@v2
         
       - name: Run JMeter Tests
-        uses: ./
-        with:
-          test-plan-path: ./TestPlans/S01_SimpleExample/S01_SimpleExample.jmx
-          args: ""
+        uses: ./TestPlans/S01_SimpleExample/S01_SimpleExample.jmx
           
       - name: Upload Results
         uses: actions/upload-artifact@v2
